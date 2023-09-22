@@ -26,4 +26,32 @@ class VehicleApiView(APIView):
             return Response(serializador.data, status=status.HTTP_201_CREATED)
         
         return Response(serializador.data, status=status.HTTP_400_BAD_REQUEST)
+    
+    def put(self, request, pkid):
+        mivehiculo=vehicle.objects.filter(id=pkid).update(
+            placa=request.data.get('placa'),
+            marca=request.data.get('marca'),
+            color_vehiculo=request.data.get('color'),
+            modelo=request.data.get('modelo')
+        )
+        return Response(mivehiculo, status=status.HTTP_200_OK)
+        
+        # 
+        # print('vehiculo '+ filtered_vehicle)
+        # if filtered_vehicle:
+
+        #     filtered_vehicle.update(
+        #         placa=request.data.get('placa'),
+        #         marca=request.data.get('marca'),
+        #         color=request.data.get('color'),
+        #         modelo=request.data.get('modelo')
+        #     )
+
+        #     return Response(filtered_vehicle, status=status.HTTP_200_OK)
+        
+        # return Response(None, status=status.HTTP_404_NOT_FOUND)
+        
+
+
+
             
