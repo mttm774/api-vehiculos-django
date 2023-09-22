@@ -143,7 +143,6 @@ static/
 # mac
 .DS_Store
 
-**/__pycache__/**
 
 
 
@@ -180,5 +179,4 @@ xstreams.jar
 libclntsh.dylib.10.1
 libocci.dylib.19.1
 TNSNAMES.ora
-parking/parking/__pycache__/**
-parking/vehicle_management/__pycache__/*
+
